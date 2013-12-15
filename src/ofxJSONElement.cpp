@@ -19,7 +19,7 @@ bool ofxJSONElement::parse(const std::string& jsonString)
 	Json::Reader reader;
 	
     if(!reader.parse( jsonString, *this )) {
-		ofLogError("ofxJSONElement::parse") << "Unable to parse string: " << reader.getFormattedErrorMessages();
+        ofLogError("ofxJSONElement::parse") << "Unable to parse string: " << reader.getFormatedErrorMessages();
 		return false;
 	}
 	
@@ -44,7 +44,7 @@ bool ofxJSONElement::openLocal(const std::string& filename)
     Json::Reader reader;
     
 	if(!reader.parse( buffer.getText(), *this )) {
-		ofLogError("ofxJSONElement::openLocal") << "Unable to parse " << filename << ": " << reader.getFormattedErrorMessages();
+        ofLogError("ofxJSONElement::openLocal") << "Unable to parse " << filename << ": " << reader.getFormatedErrorMessages();
 		return false;
 	}
     
@@ -59,7 +59,7 @@ bool ofxJSONElement::openRemote(const std::string& filename)
 	Json::Reader reader;
     
 	if(!reader.parse( result, *this )) {
-		ofLogError("ofxJSONElement::openRemote") << "Unable to parse " << filename << ": " << reader.getFormattedErrorMessages();
+        ofLogError("ofxJSONElement::openRemote") << "Unable to parse " << filename << ": " << reader.getFormatedErrorMessages();
 		return false;
 	}
     
